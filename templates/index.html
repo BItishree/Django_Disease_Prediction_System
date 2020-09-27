@@ -1,0 +1,206 @@
+﻿{% extends "basic.html" %}
+{% load static %}
+
+ {% block title %}
+              predico
+   {% endblock %}
+
+
+
+{% block css %}
+<style>
+.footer1 {
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  background-color:black;
+  color: white;
+  text-align: center;
+}
+
+.i{
+color: white;
+}
+</style>
+{% endblock %}
+
+
+
+{% block body %}
+
+
+    
+<div class="jumbotron mt-4" style="background-color:white;">
+
+    <h2 class="display-4"><b><center>Be Your own doctor :)<img class='img' src="{% static 'homepage/smiley.jpg' %}"></center></b></h2>
+    <p class="lead">
+
+    <center><br>This system is a web based
+application that predicts the disease of the user with respect to the symptoms
+given by the user.
+   <br>
+    With the availability of doctor consultation at home,
+you no longer need to stress yourself about visiting a clinic or hospitals and
+aggravate the injury.<br>
+    Why wait to see a doctor , when
+there is a doctor to see you? At home , at your convenience.
+</center>
+                
+  
+     {% if user.is_authenticated %}
+
+     {% else %}
+
+      <p class="lead"><center>
+      <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button></center>
+      </p>
+
+</div>
+
+
+
+
+    
+
+    {% endif %}
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Sign-In  As</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5">
+ <div class="row">
+    <div class="col">
+       <a href="{% url 'sign_in_admin' %}">
+<img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Sign-Up  As</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5 ml-5 mr-5">
+ <div class="row">
+
+    <div class="col">
+<a href="{% url 'signup_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'signup_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--footer-->
+
+   <div class="footer1" >
+          <div class="pt-3" >Email: itishreebehera1998@gmail.com</div>
+        <div>Contact no.123456789</div>
+
+        <div>Address: Bhubaneswar</div>
+        <div class="footer-copyright text-center">© 2020 Copyright:
+          <a href="#">Disease_prediction.com</a>
+        </div>
+       <div  class='m-3'>
+    <a href="https://www.facebook/com"><i class="i fa fa-facebook-official  fa-lg" aria-hidden="true"></i></a>&nbsp;
+    <a href="https://www.youtube/com"><i class=" i fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>&nbsp;
+    <a href="https://www.instagram/com"><i class=" i fa fa-instagram  fa-lg " aria-hidden="true"></i></a>
+</div>
+  </div>
+
+  
+ 
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    
+
+
+
+
+    
+{% endblock %}
